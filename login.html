@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+h1{
+    text-align: left;
+    padding-left: 10px;
+}
+h2{
+  text-align: center;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: right;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+     
+
+.container {
+    background: white;
+    width: 300px;
+    padding:50px;
+    margin: 100px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+footer {
+    background: #333;
+    color: white;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
+<script>
+    // Paste your Firebase config here
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCGuX3Oz6-cFAwFIqW-yjsygkkGhqkzcmA",
+    authDomain: "garapati-s-web.firebaseapp.com",
+    projectId: "garapati-s-web",
+    storageBucket: "garapati-s-web.firebasestorage.app",
+    messagingSenderId: "1091181434404",
+    appId: "1:1091181434404:web:6d4ada3d737c1b05c6eab1",
+    measurementId: "G-XF3Z4VPPJ7"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+</head>
+<body>
+  <header>
+    <h1>Garapati's Web</h1>
+    <nav>
+        <ul>
+            <li><a href="website.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" >Contact</a></li>
+        </ul>
+      
+    </nav>
+    </header>
+
+
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+</div>
+
+<div class="container" id="registerContainer" style="display: none;">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <input type="text" id="registerName" placeholder="Full Name" required>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+</div>
+
+    <script src="login.js"></script>
+    <footer>
+      <p>&copy; 2025 Divya Garapati</p>
+    </footer>
+</body>
+</html>
